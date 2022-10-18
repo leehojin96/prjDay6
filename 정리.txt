@@ -1,0 +1,38 @@
+//데이터베이스 정보 string화
+String driver = "oracle~~~~";
+
+//드라이버 연결
+Class.forName(driver);
+
+//커넥션 생성 - 커넥션 con은 url user password 받아서 드라이버 메니저통해 접속
+Connection con = DriverManger.getConnection(url, user, password);
+
+sql 
+crud
+
+
+//실행할 쿼리 작성 예시들
+1) 모든 테이블 조회
+String sql = "select * from tbl_course_300 where s_id";
+
+2) s_id에 맞는 데이터 행에서 select한 것들 가져옴
+String sql = "select s_id, s_name, s_grade, teacher_id, trim(weekday), lpad(start_h,4,'0'), end_h from tbl_course_300 where s_id= ? "
+
+3)s_id에 맞는 데이터 행에서 UPDATE SET 
+String sql = " UPDATE tbl_course_300 SET s_name=?, s_grade=?, teacher_id=?, weekday=?, start_h=?, end_h=? WHERE s_id=? "
+
+4)s_id에 맞는 데이터 행 delete
+String sql=" delete from tbl_course_300 where s_id= ?"
+
+5)데이터 테이블에 추가
+String sql ="insert into tbl_course_300 values(?,?,?,?,?,?,?)"
+
+
+
+//PreparedStatement에 쿼리 장착
+PreparedStatement pst = con.preparedStatement(sql);
+
+//쿼리 실행
+
+select 할때 ResultSet rs  =pst.executeQuery();
+rs.getString(n)

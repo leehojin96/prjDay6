@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function check() {
+	alert("check");
+	let frm = document.frm;
+	frm.submit();
+}
+</script>
+</head>
+<body>
+<form name="frm" action="reg_action.jsp" method="post">
+<table>
+<caption>수강과목 등록</caption>
+<tr>
+<td>교과목 코드</td>
+<td><input type="text" name=s_id></td>
+</tr>
+
+<tr>
+<td>교과명</td>
+<td><input type="text" name=s_name></td>
+</tr>
+
+<tr>
+<td>담당강사</td>
+<td>
+<select name="teacher_id">
+<option value="">선택</option>
+<option value="1">1교수</option>
+<option value="2">2교수</option>
+<option value="3">3교수</option>
+<option value="4">4교수</option>
+<option value="5">5교수</option>
+<option value="6">6교수</option>
+<option value="7">7교수</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>학점</td>
+<td><input type="text" name=s_grade></td>
+</tr>
+
+<tr>
+<td>요일</td>
+<td>
+<input type="radio" name="weekday" value="M">월
+<input type="radio" name="weekday" value="TU">화
+<input type="radio" name="weekday" value="W">수
+<input type="radio" name="weekday" value="TH">목
+<input type="radio" name="weekday" value="F">금
+<input type="radio" name="weekday" value="S">토
+</td>
+</tr>
+
+<tr>
+<td>수업 시작시간</td>
+<td><input type="text" name=start_h></td>
+</tr>
+
+<tr>
+<td>수업 종료시간</td>
+<td><input type="text" name=end_h></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button type="button" onclick="check()">확인</button>
+<button type="reset">초기화</button>
+<button type="button" onclick="window.location.href='index.html'">초기화면</button>
+</td>
+</tr>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+</table>
+</form>
+</body>
+</html>
